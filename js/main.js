@@ -38,37 +38,31 @@ const imageArray = [
 
 const imageContainer = document.querySelector('.my-carousel-images');
 const thumbnailContainer = document.querySelector('.my-thumbnails');
-console.warn(thumbnailContainer);
-thumbnailContainer.innerHTML += `
-<div id="my-miniature-container" class="row"></div>
-`
-const miniatureContainer = document.getElementById('my-miniature-container');
-const prevBtn = document.querySelector('.my-previous');
-const nextBtn = document.querySelector('.my-next');
-
-console.log(miniatureContainer);
 
 
 for (let i = 0; i < imageArray.length; i++) {
-    imageContainer.innerHTML += `<img class="my-carousel-item" src="${imageArray[i].src}" alt="${imageArray[i].name}">`
-
-    miniatureContainer.innerHTML += `
-    <div class="col my-min">
-        <img class="my-miniature-item" src="${imageArray[i].src}" alt="${imageArray[i].name}>
-    </div>
-    `
+    imageContainer.innerHTML += `<img class="img-fluid my-carousel-item" src="${imageArray[i].src}" alt="${imageArray[i].name}">`
+    
+    thumbnailContainer.innerHTML += `<img class="my-miniature-item" src="${imageArray[i].src}" alt="${imageArray[i].name}">`
 }
+
 
 const carouselElements = document.getElementsByClassName('my-carousel-item');
 const miniatureElements = document.getElementsByClassName('my-miniature-item');
+console.log(miniatureElements);
+
 
 carouselElements[0].classList.add('my-active');
 miniatureElements[0].classList.add('my-opacity-min');
-let activeElement = 0;
 
+
+const prevBtn = document.querySelector('.my-previous');
+const nextBtn = document.querySelector('.my-next');
+let activeElement = 0;
 prevBtn.addEventListener('click', function() {
     // Remove active from the current items
     carouselElements[activeElement].classList.remove('my-active');
+    miniatureElements[activeElement].classList.remove('my-opacity-min');
 
     activeElement--;
 
@@ -79,11 +73,13 @@ prevBtn.addEventListener('click', function() {
 
     // Add active to the previous items
     carouselElements[activeElement].classList.add('my-active');
+    miniatureElements[activeElement].classList.add('my-opacity-min');
 });
 
 nextBtn.addEventListener('click', function() {
     // Remove active from the current items
     carouselElements[activeElement].classList.remove('my-active');
+    miniatureElements[activeElement].classList.remove('my-opacity-min');
 
     activeElement++;
 
@@ -94,4 +90,22 @@ nextBtn.addEventListener('click', function() {
 
     // Add active to the next items
     carouselElements[activeElement].classList.add('my-active');
+    miniatureElements[activeElement].classList.add('my-opacity-min');
 });
+
+
+setInterval(() => {
+    carouselElements[activeElement].classList.remove('my-active');
+    miniatureElements[activeElement].classList.remove('my-opacity-min');
+
+    activeElement++;
+
+    // Loop if condition that return to start
+    if(activeElement > (carouselElements.length - 1)) {
+        activeElement = 0;
+    }
+
+    // Add active to the next items
+    carouselElements[activeElement].classList.add('my-active');
+    miniatureElements[activeElement].classList.add('my-opacity-min');
+}, 2500);
