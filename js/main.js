@@ -36,6 +36,11 @@ const imageArray = [
     }
 ]
 
+
+document.getElementById('my-before-carousel').innerHTML = `<h1>Beautifull Carousel</h1>`
+document.getElementById('my-after-carousel').innerHTML = `<p>Designed by Busna</p>`
+
+
 const imageContainer = document.querySelector('.my-carousel-images');
 const thumbnailContainer = document.querySelector('.my-thumbnails');
 

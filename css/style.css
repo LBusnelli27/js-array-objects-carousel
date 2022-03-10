@@ -3,10 +3,7 @@ body{
 }
 
 div.my-carousel-container{
-    min-height: 700px;
-    min-width: 800px;
-    height: 1000px;
-    width: 1500px;
+    width: 100%;
 }
 
 div.my-carousel-images{
@@ -46,7 +43,7 @@ div.my-next{
 div.my-previous > span::after{
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    content: "\f805";
+    content: "\f6b0";
     line-height: 30px;
 }
 
