@@ -5,16 +5,14 @@ body{
 div.my-carousel-container{
     min-height: 700px;
     min-width:800px ;
-    background-color: aquamarine;
 }
 
 div.my-carousel-images{
-    background-color: cadetblue;
     min-height: 540px;
 }
 
 div.my-thumbnails{
-    background-color: violet;
+    background-color: cadetblue;
     min-height: 160px;
 }
 
@@ -51,4 +49,27 @@ div.my-next > span::after{
     font-weight: 900;
     content: "\f520";
     line-height: 30px;
+}
+
+
+/* My classes */
+.my-carousel-item {
+    display: none;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.my-miniature-item {
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+}
+
+.my-active {
+    display: block;
+}
+
+.my-opacity-min {
+    opacity: 1;
 }
