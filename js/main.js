@@ -38,7 +38,8 @@ const imageArray = [
 
 const imageContainer = document.querySelector('.my-carousel-images');
 const thumbnailContainer = document.querySelector('.my-thumbnails');
-thumbnailContainer.innerHTML =+ `
+console.warn(thumbnailContainer);
+thumbnailContainer.innerHTML += `
 <div id="my-miniature-container" class="row"></div>
 `
 const miniatureContainer = document.getElementById('my-miniature-container');
