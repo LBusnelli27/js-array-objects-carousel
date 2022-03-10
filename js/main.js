@@ -39,12 +39,13 @@ const imageArray = [
 const imageContainer = document.querySelector('.my-carousel-images');
 const thumbnailContainer = document.querySelector('.my-thumbnails');
 thumbnailContainer.innerHTML =+ `
-<div class="row my-miniature-container"></div>
+<div id="my-miniature-container" class="row"></div>
 `
-const miniatureContainer = document.querySelector('.my-miniature-container');
+const miniatureContainer = document.getElementById('my-miniature-container');
 const prevBtn = document.querySelector('.my-previous');
 const nextBtn = document.querySelector('.my-next');
 
+console.log(miniatureContainer);
 
 
 for (let i = 0; i < imageArray.length; i++) {
@@ -59,8 +60,6 @@ for (let i = 0; i < imageArray.length; i++) {
 
 const carouselElements = document.getElementsByClassName('my-carousel-item');
 const miniatureElements = document.getElementsByClassName('my-miniature-item');
-
-console.log(carouselElements);
 
 carouselElements[0].classList.add('my-active');
 miniatureElements[0].classList.add('my-opacity-min');
