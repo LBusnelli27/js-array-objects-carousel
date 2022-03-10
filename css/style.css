@@ -1,0 +1,54 @@
+body{
+    font-family: "Montserrat", sans-serif;
+}
+
+div.my-carousel-container{
+    min-height: 700px;
+    min-width:800px ;
+    background-color: aquamarine;
+}
+
+div.my-carousel-images{
+    background-color: cadetblue;
+    min-height: 540px;
+}
+
+div.my-thumbnails{
+    background-color: violet;
+    min-height: 160px;
+}
+
+div.my-previous,
+div.my-next{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, .5);
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+div.my-previous{
+    left: 1rem;
+}
+
+div.my-next{
+    right: 1rem;
+}
+
+div.my-previous > span::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f7fb";
+    line-height: 30px;
+}
+
+div.my-next > span::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f520";
+    line-height: 30px;
+}
